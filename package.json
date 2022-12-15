@@ -7,9 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "deploy": "gh-pages -d build -r https://$GH_TOKEN@github.io/candekn/Proyecto-ReactJS-CoderHouse",
-    "predeploy": "npm run build"
+    "preview": "vite preview"
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
