@@ -16,7 +16,7 @@ export const NavBar = () => {
                 </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbar-nav" />
             <Navbar.Collapse id="navbar-nav">
-            <Nav className="ms-auto text-light">
+            <Nav className="ms-auto">
                 <NavLink>INICIO</NavLink>
                 <NavDropdown title="JUEGOS" menuVariant="dark">
 
