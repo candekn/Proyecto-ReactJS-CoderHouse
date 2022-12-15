@@ -1,0 +1,19 @@
+
+/* make the customizations */
+$theme-colors: (
+    "primary": #f28500,
+    "secondary": #f4921c,
+    "success": #fdc651,
+    "info": #fff884,
+    "warning": #c96302,
+    "danger": #ae4d02,
+    "light": #fff6ee,
+    "dark": #2e2d2c
+);
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "/src/components/CartWidget/CartWidget.scss";
+
+.text-primary{
+    color: #f28500 !important;
+}
