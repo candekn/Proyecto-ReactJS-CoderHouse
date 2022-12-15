@@ -1,7 +1,7 @@
 export const CartWidget = () => {
     const cantidad = 1;
     return (
-        <div className="icono-carrito ">
+        <div className="icono-carrito">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlnsXlink="http://www.w3.org/1999/xlink" enableBackground="new 0 0 512 512">
                 <g>
                     <g>

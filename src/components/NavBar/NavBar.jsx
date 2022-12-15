@@ -9,10 +9,10 @@ export const NavBar = () => {
                     <img
                         src={logoColor}
                         height="80"
-                        className="d-inline-block align-middle px-2"
+                        className="d-inline-block align-middle ps-2"
                         alt="Tangerine Games logo"
                     />
-                    <span className="text-primary">Tangerine Games</span>
+                    <span className="text-primary d-none d-lg-block">Tangerine Games</span>
                 </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbar-nav" />
             <Navbar.Collapse id="navbar-nav">
@@ -36,6 +36,8 @@ export const NavBar = () => {
 
             </Navbar.Collapse>
             <CartWidget />
+
         </Navbar>
+        
     )
 }

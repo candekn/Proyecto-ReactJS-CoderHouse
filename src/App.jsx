@@ -5,10 +5,11 @@ import { NavBar } from './components/NavBar/NavBar';
 function App() {
 
   return (
-        <div className='container-fluid'>
+        <main>
           <NavBar />
           <ItemListContainer greeting='Tangerine Games es una desarrolladora y distribuidora de juegos para diversas plataformas' />
-        </div>
+        </main>
+
   )
 }
 
