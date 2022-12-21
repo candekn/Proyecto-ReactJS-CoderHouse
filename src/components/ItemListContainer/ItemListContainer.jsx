@@ -1,4 +1,3 @@
-import { getData } from "../../helpers/getData"
 import { Item } from "../Item/Item";
 
 export const ItemListContainer = () => {
