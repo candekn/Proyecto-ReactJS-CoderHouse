@@ -1,6 +1,15 @@
-export const ItemListContainer = ({greeting = 'Hola Mundo'}) => {
+import { getData } from "../../helpers/getData"
+import { Item } from "../Item/Item";
+
+export const ItemListContainer = () => {
+
+
     return (
-        <h2 className="text-danger text-center py-5">{greeting}</h2>
+        <div className="m-5">
+
+        <Item productID={1} />
+        </div>
+
     )
 }
 
