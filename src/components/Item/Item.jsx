@@ -3,14 +3,8 @@ import fairy from '../../assets/img/fairy-ships-war.png';
 import { useState } from "react";
 import { AddToCart } from "../AddToCart/AddToCart";
 export const Item = ({ product }) => {
-    const [show, setShow] = useState(false);
-
-    const showDescription = () => setShow(true);
-    const hideDescription = () => setShow(false);
     return (
-        <Card bg="dark" text="light" style={{ width: '15rem' }}
-            onMouseEnter={showDescription}
-            onMouseLeave={hideDescription} >
+        <Card bg="dark" text="light" style={{ width: '15rem' }} >
             <Card.Header>
                 <div className='bg-dark text-light text-center bg-opacity-50' >
                     <Card.Title className='user-select-none py-1 h-1 zen-font'>Fairy War</Card.Title>
