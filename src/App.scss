@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
 /* make the customizations */
 $theme-colors: (
     "primary": #f28500,
@@ -11,9 +11,8 @@ $theme-colors: (
     "dark": #2e2d2c
 );
 
+
+
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 @import "/src/components/CartWidget/CartWidget.scss";
-
-.text-primary{
-    color: #f28500 !important;
-}
+@import "/src/components/Item/Item.scss";
