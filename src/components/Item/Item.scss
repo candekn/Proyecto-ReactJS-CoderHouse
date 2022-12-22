@@ -6,8 +6,7 @@
     font-family: 'Zen Dots', cursive;
 }
 
-a.text-secondary:hover{
-    font-stretch: extra-expanded;
-    -webkit-text-stroke: 0.1px #fff6ee;
-    font-weight: 700;
+.fit-image{
+    object-fit: cover;
+    object-position: center;
 }

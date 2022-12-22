@@ -1,0 +1,93 @@
+[
+    {
+        "title": "Los Sims 4",
+        "year": 2014,
+        "price": 800,
+        "genre": ["Simulación"],
+        "platform": ["PC"],
+        "stock": 40,
+        "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/sims4.png?alt=media&token=db08a588-93df-4e63-9e6f-9fc5bb9d0aaa"
+    },
+    {
+        "title": "Crash Team Racing - Nitro Fueled",
+        "year": 2019,
+        "price": 2499,
+        "genre": ["Carreras", "Aventura"],
+        "platform": ["Switch"],
+        "stock": 50,
+        "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/CTR_Image.png?alt=media&token=81b6195a-98d5-40d2-b105-b072a5bb9ed9"
+    },
+    {
+        "title": "Crash N'Sane Trilogy",
+        "year": 2017,
+        "price": 1800,
+        "genre": ["Aventura", "Plataformas"],
+        "platform": ["Switch", "PC"],
+        "stock": 25,
+        "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/Crash-trilogy.png?alt=media&token=d92c5cae-da62-4201-bcda-4336c49bec9e"    },
+    {
+        "title": "Resident Evil: Village",
+        "year": 2021,
+        "price": 6500,
+        "genre": ["Terror", "Acción"],
+        "platform": ["Switch", "PC", "Playstation 5"],
+        "stock": 20,
+        "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/RE-village.png?alt=media&token=aef98dd9-8f27-47d2-a7e3-29be3ab12ce1"
+    }, 
+
+
+    {
+        "title": "Tales Of Arise",
+        "year": 2021,
+        "price": 3500,
+        "genre": ["RPG", "Aventura"],
+        "platform": ["PC", "Playstation 5"],
+        "stock": 60,
+        "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/Tales-of-Arise-Ultimate-Edition.jpg?alt=media&token=5fa68126-f91c-4ed7-b9d7-9222cb8afa25"
+    },
+    {
+        "title": "Crash Bandicoot 4: It's About Time",
+        "year": 2020,
+        "price": 3499,
+        "genre": ["Carreras", "Aventura"],
+        "platform": ["Switch", "PC", "Playstation 5"],
+        "stock": 30,
+        "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/crash4.png?alt=media&token=c45951ed-d0f1-494d-bf36-8f59fd790c35"
+    },
+    {
+        "title": "Mario Kart 8 Deluxe",
+        "year": 2017,
+        "price": 1400,
+        "genre": ["Carreras", "Aventura"],
+        "platform": ["Switch"],
+        "stock": 45,
+        "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/mario-kart-8-deluxejpg.jpg?alt=media&token=ce99513b-a794-4668-b3ff-0b841feeb152"
+    },
+    {
+        "title": "The Legend of Zelda: Breath of the Wild ",
+        "year": 2017,
+        "price": 2400,
+        "genre": ["Carreras", "Aventura"],
+        "platform": ["Switch"],
+        "stock": 50,
+        "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/legend-zelda-breath-wild.jpg?alt=media&token=bd972eb2-9fb2-45c1-9408-a5c1bcd613c4"
+    },
+    {
+        "title": "The Quarry",
+        "year": 2022,
+        "price": 3499,
+        "genre": ["Terror"],
+        "platform": ["PC", "Playstation 5"],
+        "stock": 120,
+        "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/quarry.jpg?alt=media&token=49fed8b0-4906-46e0-b444-3b2687d30ec5"
+    },
+    {
+        "title": "Sonic Frontiers",
+        "year": 2022,
+        "price": 4100,
+        "genre": ["Acción", "Aventura", "Plataformas"],
+        "platform": ["PC", "Playstation 5", "Switch"],
+        "stock": 40,
+        "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/sonic-frontiers.jpg?alt=media&token=9740ab33-4d77-46f3-ac60-327c40e7586c"
+    }
+]

@@ -9,10 +9,10 @@ export const Item = ({ product }) => {
                     <Card.Title className='user-select-none py-1 zen-font' as="h6">{title}</Card.Title>
                 </div>
             </Card.Header>
-            <Card.Img variant="top" src={image} height="200" />
+            <Card.Img variant="top" src={image} height="250" className='fit-image'/>
             <Card.Body className='bg-dark text-light'>
                 <div className='d-flex justify-content-between'>
-                    <small>{genre.split('|').map((gen, i) => <Badge key={i.toString()} bg="info" text="light" className='me-1'>{gen}</Badge>)   }</small>
+                    <small>{genre.map((gen, i) => <Badge key={i.toString()} bg="info" text="light" className='me-1'>{gen}</Badge>)   }</small>
                     <p>${price}</p>
                 </div>
                 <div className='d-flex justify-content-center'>
