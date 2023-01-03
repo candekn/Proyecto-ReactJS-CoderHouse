@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
-import { getAllGames } from "../../data/getDataMock";
+import { getGamesByPlatform } from "../../data/getDataMock";
 import { Spinner } from "react-bootstrap";
 import { ItemList } from "../ItemList/ItemList";
 
-export const ItemListContainer = () => {
+export const ItemListByPlatform = ({platform, limit}) => {
     const [productos, setProductos] = useState([]);
-
     useEffect(() => {
-        getAllGames()
-            .then((res) => {
+        getGamesByPlatform(platform, limit)
+            .then((res) => {            
                 setProductos(res)
             })
     }, [])
