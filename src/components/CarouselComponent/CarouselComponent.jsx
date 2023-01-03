@@ -4,7 +4,7 @@ import psx from '../../assets/img/playstation.jpg'
 import ninswitch from '../../assets/img/nintendo-switch.jpg'
 export const CarouselComponent = () => {
   return (
-    <Carousel fade variant="dark">
+    <Carousel fade variant="dark" className="mb-5">
       <Carousel.Item >
         <img
           className="d-block w-100 fit-image"
