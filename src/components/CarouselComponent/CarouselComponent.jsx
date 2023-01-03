@@ -12,9 +12,9 @@ export const CarouselComponent = () => {
           alt="Mando de xbox"
           height="500"
         />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <Carousel.Caption interval={10} className="bg-dark text-secondary bg-opacity-75">
+          <h3>BIENVENIDO A TANGERINE GAMES</h3>
+          <p>Tu tienda de videojuegos favorita.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -24,9 +24,9 @@ export const CarouselComponent = () => {
           alt="Mando de PS5"
           height="500"
         />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <Carousel.Caption interval={5} className="bg-dark text-secondary bg-opacity-75">
+          <h3>LOS MEJORES JUEGOS</h3>
+          <p>Tus juegos favoritos, en un solo lugar.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -36,9 +36,9 @@ export const CarouselComponent = () => {
           alt="Nintendo Switch"
           height="500"
         />
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <Carousel.Caption interval={5} className="bg-dark text-secondary bg-opacity-75">
+          <h3>DIVERSAS PLATAFORMAS, DIVERSIÓN EN TODO MOMENTO</h3>
+          <p>¿No te decides en qué plataforma jugar? ¡Juégalos en todas!</p>
         </Carousel.Caption>
       </Carousel.Item>
       </Carousel>
