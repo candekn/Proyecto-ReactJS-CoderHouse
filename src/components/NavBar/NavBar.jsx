@@ -1,4 +1,5 @@
 import { Dropdown, Nav, Navbar, NavDropdown, NavLink } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import logoColor from "../../assets/img/logo-color.png";
 import { CartWidget } from "../CartWidget/CartWidget";
 
@@ -20,17 +21,17 @@ export const NavBar = () => {
             </span>
             <Navbar.Collapse id="navbar-nav">
                 <Nav className="mx-auto mx-lg-0 ms-lg-auto px-2">
-                    <NavLink>INICIO</NavLink>
+                    <Link to="/">INICIO</Link>
                     <NavDropdown title="JUEGOS" menuVariant="dark">
                         <NavDropdown.Header>Explorar</NavDropdown.Header>
                         <NavDropdown.Item>Novedades</NavDropdown.Item>
                         <NavDropdown.Item>Próximamente</NavDropdown.Item>
-                        <NavDropdown.Item>Todos los juegos</NavDropdown.Item>
+                        <NavDropdown.Item><Link to="juegos">Todos los juegos</Link> </NavDropdown.Item>
                         <NavDropdown.Divider></NavDropdown.Divider>
                         <NavDropdown.Header>Plataformas</NavDropdown.Header>
-                        <NavDropdown.Item>PC</NavDropdown.Item>
-                        <NavDropdown.Item>Playstation 5</NavDropdown.Item>
-                        <NavDropdown.Item>Switch</NavDropdown.Item>
+                        <NavDropdown.Item><Link to="juegos/pc">PC</Link> </NavDropdown.Item>
+                        <NavDropdown.Item><Link to="juegos/playstation-5">Playstation 5</Link> </NavDropdown.Item>
+                        <NavDropdown.Item><Link to="juegos/switch">Switch</Link> </NavDropdown.Item>
                     </NavDropdown>
                     <NavLink>MERCHANDISING</NavLink>
                     <NavLink>NOSOTROS</NavLink>

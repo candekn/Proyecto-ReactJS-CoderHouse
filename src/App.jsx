@@ -1,33 +1,25 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.scss';
-import { ItemList } from './components/ItemList/ItemList';
+import { Index } from './components/Index/Index';
 import { NavBar } from './components/NavBar/NavBar';
-import { Row, Col, Container } from 'react-bootstrap';
-import { CarouselComponent } from './components/CarouselComponent/CarouselComponent';
-import { ItemListByPlatform } from './components/ItemListByPlatform/ItemListByPlatform';
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+
 
 function App() {
   const platforms = ['Playstation 5', 'Switch', 'PC'];
 
   return (
     <main>
-      <NavBar />
-      <Container fluid>
-        <CarouselComponent />
-        {
-          platforms.map((plat) =>
-            <>
-              <Row key={plat} className='my-3'>
-                <Col>
-                  <h3 className='mx-5 zen-font'>{plat}</h3>
-                  <ItemListByPlatform platform={plat} limit={5} />
-                </Col>
-              </Row>
-              <hr />
-            </>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<Index />} />
+          <Route path='/juegos' element={ <ItemListContainer />} />
+          <Route path='/juegos/:categoria' element={<ItemListContainer />} />
+          <Route path='/' element={<Index />} />
 
-          )
-        }
-      </Container>
+        </Routes>
+      </BrowserRouter>
     </main>
 
   )
