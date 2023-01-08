@@ -17,6 +17,7 @@ export const ItemListContainer = () => {
             })
         }
         else{
+            setPlataformaNombre("Todos los juegos")
             getAllGames()
                 .then((res) => {
                     setProductos(res)

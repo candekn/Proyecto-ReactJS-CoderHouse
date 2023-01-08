@@ -1,5 +1,4 @@
-import { Badge, Card } from 'react-bootstrap';
-import { AddToCart } from "../AddToCart/AddToCart";
+import { Badge, Button, Card } from 'react-bootstrap';
 export const Item = ({ product }) => {
     const { id, title, year, price, genre, platform, stock, image } = product;
     return (
@@ -16,7 +15,8 @@ export const Item = ({ product }) => {
                     <p>${price}</p>
                 </div>
                 <div className='d-flex justify-content-center'>
-                    <AddToCart />
+                <Button variant='primary' className='mt-2' 
+                    >Detalles</Button>
                 </div>
             </Card.Body>
 

@@ -3,6 +3,7 @@ import './App.scss';
 import { Index } from './components/Index/Index';
 import { NavBar } from './components/NavBar/NavBar';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import { Nosotros } from './components/Nosotros/Nosotros';
 
 
 function App() {
@@ -16,8 +17,8 @@ function App() {
           <Route path='/' element={<Index />} />
           <Route path='/juegos' element={ <ItemListContainer />} />
           <Route path='/juegos/:plataforma' element={<ItemListContainer />} />
-          <Route path='/' element={<Index />} />
-
+          <Route path='/nosotros' element={<Nosotros />} />
+          <Route path='/' element={<Nosotros />} />          
         </Routes>
       </BrowserRouter>
     </main>
