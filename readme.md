@@ -7,8 +7,8 @@
 Realizar un e-Commerce que se entregará en parte mediante entregables.
 
 ### Idea del Proyecto:
-<strong>Tangerine Games</strong> es una desarrolladora y distribuidora de videojuegos multiplataforma.
-En su web podremos comprar tanto sus juegos, como merchandasing de los mismos.
+<strong>Tangerine Games</strong> es una tienda de videojuegos multiplataforma.
+En su web podremos comprar juegos en formato digital y físico.
 
 #### URL: 
 https://candekn.github.io/Proyecto-ReactJS-CoderHouse/
