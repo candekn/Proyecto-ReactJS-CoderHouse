@@ -21,17 +21,17 @@ export const NavBar = () => {
             </span>
             <Navbar.Collapse id="navbar-nav">
                 <Nav className="mx-auto mx-lg-0 ms-lg-auto px-2">
-                    <Link to="/">INICIO</Link>
+                    <Link  className="nav-link" to="/">INICIO</Link>
                     <NavDropdown title="JUEGOS" menuVariant="dark">
                         <NavDropdown.Header>Explorar</NavDropdown.Header>
                         <NavDropdown.Item>Novedades</NavDropdown.Item>
                         <NavDropdown.Item>Próximamente</NavDropdown.Item>
-                        <NavDropdown.Item><Link to="juegos">Todos los juegos</Link> </NavDropdown.Item>
+                        <Link to="juegos" className="dropdown-item">Todos los juegos</Link> 
                         <NavDropdown.Divider></NavDropdown.Divider>
                         <NavDropdown.Header>Plataformas</NavDropdown.Header>
-                        <NavDropdown.Item><Link to="juegos/pc">PC</Link> </NavDropdown.Item>
-                        <NavDropdown.Item><Link to="juegos/playstation-5">Playstation 5</Link> </NavDropdown.Item>
-                        <NavDropdown.Item><Link to="juegos/switch">Switch</Link> </NavDropdown.Item>
+                        <Link className="dropdown-item" to="juegos/pc">PC</Link> 
+                        <Link className="dropdown-item" to="juegos/playstation-5">Playstation 5</Link>
+                        <Link className="dropdown-item" to="juegos/switch">Switch</Link>
                     </NavDropdown>
                     <NavLink>MERCHANDISING</NavLink>
                     <NavLink>NOSOTROS</NavLink>

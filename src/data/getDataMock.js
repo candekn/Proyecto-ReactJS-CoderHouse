@@ -8,8 +8,8 @@ export const getAllGames = () => {
     })
 }
 
-export const getGamesByPlatform = (platform, limit=5) => {
-    const dataFilter = data.filter(d => d.platform.includes(platform)).slice(0, limit)
+export const getGamesByPlatform = (plataforma) => {
+    const dataFilter = data.filter(d => d.platform.includes(plataforma) )
 
     return new Promise((resolve, reject) => {
         setTimeout(() => {

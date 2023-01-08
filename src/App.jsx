@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Index />} />
           <Route path='/juegos' element={ <ItemListContainer />} />
-          <Route path='/juegos/:categoria' element={<ItemListContainer />} />
+          <Route path='/juegos/:plataforma' element={<ItemListContainer />} />
           <Route path='/' element={<Index />} />
 
         </Routes>
