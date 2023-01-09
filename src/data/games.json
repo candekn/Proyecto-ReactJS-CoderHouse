@@ -12,6 +12,7 @@
         ],
         "description": "Los Sims 4 es el juego de simulación social definitivo: crea personajes únicos, construye casas de ensueño y deja que se desate el caos.",
         "stock": 40,
+        "format": ["Fisico", "Digital"],
         "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/sims4.png?alt=media&token=db08a588-93df-4e63-9e6f-9fc5bb9d0aaa"
     },
     {
@@ -28,6 +29,7 @@
         ],
         "description": "¡Crash vuelve al volante! Prepárate para desmelenarte con Crash™ Team Racing Nitro-Fueled. Es la experiencia auténtica de CTR y mucho más; completamente remasterizada y a tope de revoluciones.",
         "stock": 50,
+        "format": ["Fisico", "Digital"],
         "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/CTR_Image.png?alt=media&token=81b6195a-98d5-40d2-b105-b072a5bb9ed9"
     },
     {
@@ -45,6 +47,7 @@
         ],
         "description": "¡Vuelve Crash Bandicoot™, tu marsupial favorito! Mejorado, embelesado y listo para bailar con la colección de juegos La trilogía. Ahora puedes disfrutar de Crash Bandicoot como nunca antes. Gira, salta, rompe, enfréntate a los épicos desafíos y vive las aventuras de los tres juegos con los que empezó todo: Crash Bandicoot™, Crash Bandicoot™ 2: Cortex Strikes Back y Crash Bandicoot™ 3: Warped. ¡Vuelve a vivir tus momentos favoritos de Crash con gráficos remasterizados y prepárate para disfrutar a tope!",
         "stock": 25,
+        "format": ["Fisico", "Digital"],
         "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/Crash-trilogy.png?alt=media&token=d92c5cae-da62-4201-bcda-4336c49bec9e"
     },
     {
@@ -61,8 +64,9 @@
             "pc",
             "playstation-5"
         ],
-        "description": "Vive el survival horror como nunca antes en la 8.ª entrega principal de la aclamada serie Resident Evil: Resident Evil Village. \n Ambientada unos años después de los escalofriantes sucesos del aclamado Resident Evil 7: Biohazard, esta flamante nueva historia arranca con Ethan Winters y su esposa Mia viviendo plácidamente en un nuevo lugar, lejos de pesadillas pasadas. Sin embargo, justo cuando están empezando su nueva vida juntos, la tragedia vuelve a cebarse con ellos.",
+        "description": "Vive el survival horror como nunca antes en la 8.ª entrega principal de la aclamada serie Resident Evil: Resident Evil Village. <br /> Ambientada unos años después de los escalofriantes sucesos del aclamado Resident Evil 7: Biohazard, esta flamante nueva historia arranca con Ethan Winters y su esposa Mia viviendo plácidamente en un nuevo lugar, lejos de pesadillas pasadas. Sin embargo, justo cuando están empezando su nueva vida juntos, la tragedia vuelve a cebarse con ellos.",
         "stock": 20,
+        "format": ["Fisico", "Digital"],
         "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/RE-village.png?alt=media&token=aef98dd9-8f27-47d2-a7e3-29be3ab12ce1"
     },
     {
@@ -80,6 +84,7 @@
         ],
         "description": "300 años de tiranía. Una misteriosa máscara. Ni recuerdos ni dolor. Empuña la Espada Llameante y únete a una misteriosa joven intocable en su rebelión. ¡Vive una apasionante historia de liberación, con personajes inolvidables y gráficos increíbles!",
         "stock": 60,
+        "format": ["Fisico", "Digital"],
         "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/Tales-of-Arise-Ultimate-Edition.jpg?alt=media&token=5fa68126-f91c-4ed7-b9d7-9222cb8afa25"
     },
     {
@@ -96,8 +101,9 @@
             "pc",
             "playstation-5"
         ],
-        "description": "Neo Cortex y N. Tropy han vuelto a las andadas y esta vez no planean darle la tabarra al universo, ¡su objetivo es el multiverso entero! Crash y Coco tendrán que reunir cuatro máscaras cuánticas y trastocar las leyes de la realidad para salvar el mundo. \n ¿Habilidades nuevas? Evidentemente. ¿Más personajes jugables? Sep. ¿Dimensiones alternativas? Faltaría más. ¿Jefes alocadísimos? Por supuesto. ¿Cañita de la buena? Por los 'jorts' que lleva que sí. ¿Cómo? ¿Entonces se llaman 'jorts' de verdad? ¡En este universo no!",
+        "description": "Neo Cortex y N. Tropy han vuelto a las andadas y esta vez no planean darle la tabarra al universo, ¡su objetivo es el multiverso entero! Crash y Coco tendrán que reunir cuatro máscaras cuánticas y trastocar las leyes de la realidad para salvar el mundo. <br /> ¿Habilidades nuevas? Evidentemente. ¿Más personajes jugables? Sep. ¿Dimensiones alternativas? Faltaría más. ¿Jefes alocadísimos? Por supuesto. ¿Cañita de la buena? Por los 'jorts' que lleva que sí. ¿Cómo? ¿Entonces se llaman 'jorts' de verdad? ¡En este universo no!",
         "stock": 30,
+        "format": ["Fisico", "Digital"],
         "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/crash4.png?alt=media&token=c45951ed-d0f1-494d-bf36-8f59fd790c35"
     },
     {
@@ -114,6 +120,7 @@
         ],
         "description": "Acelera a través de las pistas del Reino Champiñón bajo el agua, en el cielo, de cabeza y sin gravedad, y llega a la meta para obtener la victoria! Prepara motores en el modo multijugador local, en los torneos en línea del juego, en el modo batalla que ha sido mejorado ¡y más!",
         "stock": 45,
+        "format": ["Fisico", "Digital"],
         "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/mario-kart-8-deluxejpg.jpg?alt=media&token=ce99513b-a794-4668-b3ff-0b841feeb152"
     },
     {
@@ -130,6 +137,7 @@
         ],
         "description": "Olvida todo lo que sabes acerca de los juegos de la serie The Legend of Zelda. Explora y descubre un mundo lleno de aventuras en The Legend of Zelda: Breath of the Wild, una nueva saga que rompe los esquemas de la aclamada serie. Viaja a través de praderas y bosques, y alcanza cimas de montañas mientras descubres cómo cayó en la ruina el reino de Hyrule en esta emocionante aventura al aire libre. Ahora con Nintendo Switch, tu aventura será más libre y extensa que nunca.",
         "stock": 50,
+        "format": ["Fisico", "Digital"],
         "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/legend-zelda-breath-wild.jpg?alt=media&token=bd972eb2-9fb2-45c1-9408-a5c1bcd613c4"
     },
     {
@@ -146,6 +154,7 @@
         ],
         "description": "Cuando oscurece en el último día de campamento, nueve monitores se ven envueltos en una noche terrorífica. Solo hay una cosa más horrible que los lugareños cubiertos de sangre y las criaturas que les dan caza... las decisiones que tendrás que tomar si quieres que sobrevivan.",
         "stock": 120,
+        "format": ["Fisico", "Digital"],
         "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/quarry.jpg?alt=media&token=49fed8b0-4906-46e0-b444-3b2687d30ec5"
     },
     {
@@ -165,6 +174,7 @@
         ],
         "description": "¡Dos mundos chocan en la nueva y vertiginosa aventura de Sonic the Hedgehog! Lucha contra hordas de poderosos enemigos mientras exploras un mundo impresionante lleno de acción, aventura y misterios. Alcanza nuevas alturas y experimenta la emoción y la libertad a todo ritmo en las zonas abiertas de las cinco enormes Starfall Islands. Disfruta de la aventura y aprovecha el poder de los ancestros para detener a estos nuevos y misteriosos enemigos. ¡Bienvenidos a la evolución de los juegos de Sonic!",
         "stock": 40,
+        "format": ["Fisico", "Digital"],
         "image": "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-5d887.appspot.com/o/sonic-frontiers.jpg?alt=media&token=9740ab33-4d77-46f3-ac60-327c40e7586c"
     }
 ]
