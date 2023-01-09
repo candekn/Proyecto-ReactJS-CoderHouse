@@ -31,11 +31,11 @@ export const NavBar = () => {
                         <Link to="juegos" className="dropdown-item">Todos los juegos</Link> 
                         <NavDropdown.Divider></NavDropdown.Divider>
                         <NavDropdown.Header>Plataformas</NavDropdown.Header>
-                        <Link className="dropdown-item" to="juegos/pc">PC</Link> 
-                        <Link className="dropdown-item" to="juegos/playstation-5">Playstation 5</Link>
-                        <Link className="dropdown-item" to="juegos/switch">Switch</Link>
+                        <Link className="dropdown-item" to="/juegos/plataforma/pc">PC</Link> 
+                        <Link className="dropdown-item" to="/juegos/plataforma/playstation-5">Playstation 5</Link>
+                        <Link className="dropdown-item" to="/juegos/plataforma/switch">Switch</Link>
                     </NavDropdown>
-                    <Link to="nosotros" className="nav-link">NOSOTROS</Link> 
+                    <Link to="/nosotros" className="nav-link">NOSOTROS</Link> 
                 </Nav>
             </Navbar.Collapse>
             <span className="d-none d-lg-inline-block ms-lg-auto">
