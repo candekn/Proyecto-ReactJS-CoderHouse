@@ -1,7 +1,11 @@
-import { Badge, Card } from 'react-bootstrap';
-import { AddToCart } from "../AddToCart/AddToCart";
+import { Badge, Button, Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 export const Item = ({ product }) => {
-    const { id, title, year, price, genre, platform, stock, image } = product;
+    const { id, title, price, genre, image } = product;
+    const navigate = useNavigate();
+    const irDetalleProducto = () =>{
+        navigate(`/juegos/detalle/${id}`);
+    }
     return (
         <Card bg="dark" text="light" className='my-3' style={{ width: '15rem' }} >
             <Card.Header style={{'height': '5rem'}}>
@@ -16,7 +20,8 @@ export const Item = ({ product }) => {
                     <p>${price}</p>
                 </div>
                 <div className='d-flex justify-content-center'>
-                    <AddToCart />
+                <Button variant='primary' className='mt-2' onClick={irDetalleProducto}
+                    >Detalles</Button>
                 </div>
             </Card.Body>
 

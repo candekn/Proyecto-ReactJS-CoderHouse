@@ -11,8 +11,6 @@ $theme-colors: (
     "dark": #2e2d2c
 );
 
-
-
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 @import "/src/components/CartWidget/CartWidget.scss";
 @import "/src/components/Item/Item.scss";
