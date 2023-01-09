@@ -10,7 +10,7 @@ export const NotFound = () => {
     }
 
     const volverAlInicio = () => {
-        navigate('/')
+        navigate('/Proyecto-ReactJS-CoderHouse/')
     }
 
     return (

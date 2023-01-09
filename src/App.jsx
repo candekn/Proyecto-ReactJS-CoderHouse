@@ -14,12 +14,12 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path='/' element={<Index />} />
-          <Route path='/juegos' element={ <ItemListContainer />} />
-          <Route path='/juegos/plataforma/:plataforma' element={<ItemListContainer />} />
-          <Route path='/juegos/detalle/:id' element={ <ItemDetailContainer /> } />
-          <Route path='/nosotros' element={<Nosotros />} />
-          <Route path='/*' element={<NotFound />} />     
+          <Route path='/Proyecto-ReactJS-CoderHouse/' element={<Index />} />
+          <Route path='/Proyecto-ReactJS-CoderHouse/juegos' element={ <ItemListContainer />} />
+          <Route path='/Proyecto-ReactJS-CoderHouse/juegos/plataforma/:plataforma' element={<ItemListContainer />} />
+          <Route path='/Proyecto-ReactJS-CoderHouse/juegos/detalle/:id' element={ <ItemDetailContainer /> } />
+          <Route path='/Proyecto-ReactJS-CoderHouse/nosotros' element={<Nosotros />} />
+          <Route path='/Proyecto-ReactJS-CoderHouse/*' element={<NotFound />} />     
         </Routes>
       </BrowserRouter>
     </main>

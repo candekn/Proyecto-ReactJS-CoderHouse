@@ -4,7 +4,7 @@ export const Item = ({ product }) => {
     const { id, title, price, genre, image } = product;
     const navigate = useNavigate();
     const irDetalleProducto = () =>{
-        navigate(`/juegos/detalle/${id}`);
+        navigate(`/Proyecto-ReactJS-CoderHouse/juegos/detalle/${id}`);
     }
     return (
         <Card bg="dark" text="light" className='my-3' style={{ width: '15rem' }} >
