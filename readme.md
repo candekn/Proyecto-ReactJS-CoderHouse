@@ -19,4 +19,8 @@ https://candekn.github.io/Proyecto-ReactJS-CoderHouse/
 - Primer Entregable (14-12-22): 
   - Objetivo: Crear el menú e-commerce de tu proyecto.
   - Fecha límite de entrega: 21/12/22
-  - Entregado: 15/12/22
+  - Entregado: 15/12/22 ✅
+- Segundo Entregable (04-01-23): 
+  - Objetivo: Configura en App.js el routing usando un BrowserRouter de tu aplicación con react-router-dom
+  - Fecha límite de entrega: 11/01/23
+  - Entregado: 09/01/23
