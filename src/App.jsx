@@ -19,7 +19,7 @@ function App() {
           <Route path='/Proyecto-ReactJS-CoderHouse/juegos/plataforma/:plataforma' element={<ItemListContainer />} />
           <Route path='/Proyecto-ReactJS-CoderHouse/juegos/detalle/:id' element={ <ItemDetailContainer /> } />
           <Route path='/Proyecto-ReactJS-CoderHouse/nosotros' element={<Nosotros />} />
-          <Route path='/Proyecto-ReactJS-CoderHouse/*' element={<NotFound />} />     
+          <Route path='/*' element={<NotFound />} />     
         </Routes>
       </BrowserRouter>
     </main>
