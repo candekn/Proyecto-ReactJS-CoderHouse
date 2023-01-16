@@ -1,14 +1,16 @@
 import { Dropdown, Nav, Navbar, NavDropdown, NavLink } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logoColor from "../../assets/img/logo-color.png";
+import { useLoginContext } from "../../context/LoginContext";
 import { CartWidget } from "../CartWidget/CartWidget";
 
 export const NavBar = () => {
+
     return (
         <Navbar bg="dark" expand="lg" variant="dark" >
             <Navbar.Toggle aria-controls="navbar-nav" className="me-0 mx-2" />
             <Navbar.Brand>
-                <Link to="/Proyecto-ReactJS-CoderHouse/">
+                <Link to="/">
                 <img
                     src={logoColor}
                     height="80"
@@ -23,19 +25,16 @@ export const NavBar = () => {
             </span>
             <Navbar.Collapse id="navbar-nav">
                 <Nav className="mx-auto mx-lg-0 ms-lg-auto px-2">
-                    <Link  className="nav-link" to="/Proyecto-ReactJS-CoderHouse/">INICIO</Link>
+                    <Link  className="nav-link" to="/">INICIO</Link>
                     <NavDropdown title="JUEGOS" menuVariant="dark">
-                        {/* <NavDropdown.Header>Explorar</NavDropdown.Header>
-                        <NavDropdown.Item>Novedades</NavDropdown.Item>
-                        <NavDropdown.Item>Próximamente</NavDropdown.Item> */}
-                        <Link to="/Proyecto-ReactJS-CoderHouse/juegos" className="dropdown-item">Todos los juegos</Link> 
+                        <Link to="/juegos" className="dropdown-item">Todos los juegos</Link> 
                         <NavDropdown.Divider></NavDropdown.Divider>
                         <NavDropdown.Header>Plataformas</NavDropdown.Header>
-                        <Link className="dropdown-item" to="/Proyecto-ReactJS-CoderHouse/juegos/plataforma/pc">PC</Link> 
-                        <Link className="dropdown-item" to="/Proyecto-ReactJS-CoderHouse/juegos/plataforma/playstation-5">Playstation 5</Link>
-                        <Link className="dropdown-item" to="/Proyecto-ReactJS-CoderHouse/juegos/plataforma/switch">Switch</Link>
+                        <Link className="dropdown-item" to="/juegos/plataforma/pc">PC</Link> 
+                        <Link className="dropdown-item" to="/juegos/plataforma/playstation-5">Playstation 5</Link>
+                        <Link className="dropdown-item" to="/juegos/plataforma/switch">Switch</Link>
                     </NavDropdown>
-                    <Link to="/Proyecto-ReactJS-CoderHouse/nosotros" className="nav-link">NOSOTROS</Link> 
+                    <Link to="/nosotros" className="nav-link">NOSOTROS</Link> 
                 </Nav>
             </Navbar.Collapse>
             <span className="d-none d-lg-inline-block ms-lg-auto">
