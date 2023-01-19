@@ -1,9 +1,11 @@
 import { useState } from "react"
+import { Button, Container, Form } from "react-bootstrap"
+import { useNavigate } from "react-router-dom"
 import { useLoginContext } from "../../context/LoginContext"
 
 export const Login = () => {
     const { login, user } = useLoginContext()
-
+    const navigate = useNavigate();
     const [values, setValues] = useState({
         email: '',
         password: ''
@@ -18,36 +20,31 @@ export const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
         login(values)
+        navigate(-1)
     }
 
     return (
-        <div className='login-screen'>
-            <div className='login'>
-                <h2>Login</h2>
+        <Container className="d-flex justify-content-center">
+        <div style={{'maxWidth':'25em'}}>
+            <Form onSubmit={handleSubmit}>
+                <h2 className="text-center mt-3">¡Bienvenido!</h2>
                 <hr />
-
-                <form onSubmit={handleSubmit}>
-                    <input
-                        className='form-control my-2'
-                        type='email'
-                        value={values.email}
-                        onChange={handleInputChange}
-                        name="email"
-                    />
-                    <input
-                        className='form-control my-2'
-                        type='password'
-                        value={values.password}
-                        onChange={handleInputChange}
-                        name="password"
-                    />
-
-                    <button className='btn btn-primary'>Ingresar</button>
-                    {user.error && <p className='error'>{user.error}</p>}
-                </form>
-            </div>
+                <Form.Group>
+                    <Form.Label>Email:</Form.Label>
+                    <Form.Control type="email" value={values.email} onChange={handleInputChange} name="email"></Form.Control>
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Contraseña:</Form.Label>
+                    <Form.Control type="password" value={values.password} onChange={handleInputChange} name="password"></Form.Control>
+                </Form.Group>
+                { user.error && <p className='invalid-feedback'>{user.error}</p> }
+                <div className="my-3 d-flex justify-content-around">
+                <Button variant="primary" type="submit">Ingresar</Button>
+                <Button variant="info" type="reset">Cancelar</Button>
+                </div>
+            </Form>
         </div>
+        </Container>
     )
 }

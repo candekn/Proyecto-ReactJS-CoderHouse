@@ -16,8 +16,7 @@ const PrivateRoutes = () => {
             <Route path='/juegos/detalle/:id' element={ <ItemDetailContainer /> } />
             <Route path='/nosotros' element={ <Nosotros />} />
             <Route path='/carrito' element={ <Cart />} />
-            <Route path='/404' element={ <NotFound />}/>
-            <Route path='*' element={ <Navigate to="/404"/> } />     
+            <Route path='*' element={ <NotFound />} />
         </Routes>  
     )
 }

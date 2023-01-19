@@ -9,7 +9,7 @@ export const AppRouter = () => {
 
     return (
         <BrowserRouter>
-          <NavBar />
+            <NavBar />
             { user.logged 
                 ? <PrivateRoutes />
                 : <PublicRoutes />

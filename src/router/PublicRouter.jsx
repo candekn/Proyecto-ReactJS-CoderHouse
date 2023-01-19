@@ -13,7 +13,7 @@ const PublicRoutes = () => {
             <Route path='/juegos' element={ <ItemListContainer />} />
             <Route path='/juegos/plataforma/:plataforma' element={ <ItemListContainer />} />
             <Route path='/nosotros' element={ <Nosotros />} />
-            <Route path="*" element={ <Navigate to="/login"/> } />
+            <Route path='*' element={ <Navigate to="/login"/> } />
         </Routes>
     )
 }
