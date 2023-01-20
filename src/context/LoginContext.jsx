@@ -1,22 +1,8 @@
+import { collection, getDoc, getDocs, query, where } from 'firebase/firestore/lite';
 import { createContext, useContext, useState, useEffect } from 'react';
-
-const MOCK_USERS = [
-    {
-        email: 'cande@mail.com',
-        name: 'Candelaria',
-        password: '1234'
-    },
-    {
-        email: 'tutor@coder.com',
-        name: 'Tutor',
-        password: 'coder'
-    },
-    {      
-        email: 'Elka.Carleen@gmail.com',
-        name: 'Elka Carleen',
-        password: 'Abc123'
-    }
-]
+import { Spinner } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import { db } from '../firebase/config';
 
 const userLog = JSON.parse(localStorage.getItem('user')) || {
     email: null,
@@ -32,43 +18,44 @@ export const useLoginContext = () => {
 
 export const LoginProvider = ({children}) => {
 
-    console.log("🚀 ~ file: LoginContext.jsx:29 ~ children", children);
-
     const [user, setUser] = useState(userLog)
-
+    const [loading, setLoading] = useState(true);
     const login = (values) => {
-        const match = MOCK_USERS.find(user => user.email === values.email)
 
-        if (!match) {
-            setUser({
-                email: null,
-                logged: false,
-                error: 'No se encuentra ese usuario'
+        const userReference = collection(db, 'users');
+        const q = query(userReference, where('email', '==', values.email));
+        setLoading(true);
+        
+        getDocs(q)
+        .then((res) => {
+                if(res.docs.length > 0){
+                    const data = res.docs[0].data()
+                    setUser({
+                        email: data.email,
+                        name: data.name,
+                        logged: true,
+                        error: null
+                    })
+                    return true
+                }else{
+                    setUser({
+                        email: null,
+                        name: null,
+                        logged: false,
+                        error: 'El usuario o contraseña es inválido'
+                    })
+                    return false;
+                }
+                })  
+            .finally(() => {
+                setLoading(false);
             })
-            return
-        }
-
-        if (match.password === values.password) {
-            setUser({
-                email: match.email,
-                name: match.name,
-                logged: true,
-                error: null
-            })
-
-        } else {
-            setUser({
-                email: null,
-                name: null,
-                logged: false,
-                error: 'Password inválido'
-            })
-        }
     }
 
     const logout = () => {
         setUser({
             email: null,
+            name: null,
             logged: false,
             error: null
         })
@@ -79,7 +66,9 @@ export const LoginProvider = ({children}) => {
     }, [user]);
 return (
         <LoginContext.Provider value={{user, login, logout}}>
-            {children}
+            {
+                children
+            }
         </LoginContext.Provider>
     )
 }

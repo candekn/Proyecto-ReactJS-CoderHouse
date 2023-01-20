@@ -1,7 +1,6 @@
-import { collection, doc, getDoc } from 'firebase/firestore/lite';
+import { doc, getDoc } from 'firebase/firestore/lite';
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import { getProduct } from '../../data/getDataMock';
 import { db } from '../../firebase/config';
 import { ItemDetail } from '../ItemDetail/ItemDetail';
 
