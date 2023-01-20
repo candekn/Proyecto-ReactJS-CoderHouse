@@ -1,10 +1,11 @@
-import { Dropdown, Nav, Navbar, NavDropdown, NavLink } from "react-bootstrap";
+import { Button, Dropdown, Nav, Navbar, NavDropdown, NavLink } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logoColor from "../../assets/img/logo-color.png";
 import { useLoginContext } from "../../context/LoginContext";
 import { CartWidget } from "../CartWidget/CartWidget";
 
 export const NavBar = () => {
+    const { logout, user } = useLoginContext()
 
     return (
         <Navbar bg="dark" expand="lg" variant="dark" >
@@ -25,6 +26,11 @@ export const NavBar = () => {
             </span>
             <Navbar.Collapse id="navbar-nav">
                 <Nav className="mx-auto mx-lg-0 ms-lg-auto px-2">
+                    {user.logged 
+                    && <NavDropdown title={(`Hola, ${user.name}!`.toUpperCase())}>
+                        <Button  className="dropdown-item" onClick={logout}>Salir</Button>
+                    </NavDropdown>
+                    }
                     <Link  className="nav-link" to="/">INICIO</Link>
                     <NavDropdown title="JUEGOS" menuVariant="dark">
                         <Link to="/juegos" className="dropdown-item">Todos los juegos</Link> 

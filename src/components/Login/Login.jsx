@@ -1,10 +1,10 @@
 import { useState } from "react"
-import { Button, Container, Form } from "react-bootstrap"
-import { useNavigate } from "react-router-dom"
+import { Button, Container, Form, Spinner } from "react-bootstrap"
+import { redirect, useNavigate } from "react-router-dom"
 import { useLoginContext } from "../../context/LoginContext"
 
 export const Login = () => {
-    const { login, user } = useLoginContext()
+    const { login, user, loading } = useLoginContext()
     const navigate = useNavigate();
     const [values, setValues] = useState({
         email: '',
@@ -20,8 +20,9 @@ export const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        login(values)
-        navigate(-1)
+        if(login(values)){
+            redirect('/home')
+        }
     }
 
     return (
@@ -40,7 +41,7 @@ export const Login = () => {
                 </Form.Group>
                 { user.error && <p className='invalid-feedback'>{user.error}</p> }
                 <div className="my-3 d-flex justify-content-around">
-                <Button variant="primary" type="submit">Ingresar</Button>
+                <Button variant="primary" type="submit" disabled={loading}>{loading ? <Spinner /> : 'Ingresar'}</Button>
                 <Button variant="info" type="reset">Cancelar</Button>
                 </div>
             </Form>
