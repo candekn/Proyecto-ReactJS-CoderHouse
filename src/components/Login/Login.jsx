@@ -5,7 +5,6 @@ import { useLoginContext } from "../../context/LoginContext"
 
 export const Login = () => {
     const { login, user, loading } = useLoginContext()
-    const navigate = useNavigate();
     const [values, setValues] = useState({
         email: '',
         password: ''
@@ -19,16 +18,20 @@ export const Login = () => {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        if(login(values)){
-            redirect('/home')
-        }
+        e.preventDefault();
+        login(values);
+    }
+    const clearInput = () => {
+        setValues({
+            email: '',
+            password: ''
+        })
     }
 
     return (
         <Container className="d-flex justify-content-center">
         <div style={{'maxWidth':'25em'}}>
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} >
                 <h2 className="text-center mt-3">¡Bienvenido!</h2>
                 <hr />
                 <Form.Group>
@@ -39,10 +42,10 @@ export const Login = () => {
                     <Form.Label>Contraseña:</Form.Label>
                     <Form.Control type="password" value={values.password} onChange={handleInputChange} name="password"></Form.Control>
                 </Form.Group>
-                { user.error && <p className='invalid-feedback'>{user.error}</p> }
+                <p className='invalid-feedback d-block'>{user.error}</p>
                 <div className="my-3 d-flex justify-content-around">
                 <Button variant="primary" type="submit" disabled={loading}>{loading ? <Spinner /> : 'Ingresar'}</Button>
-                <Button variant="info" type="reset">Cancelar</Button>
+                <Button variant="info" type="reset" onClick={clearInput}>Cancelar</Button>
                 </div>
             </Form>
         </div>

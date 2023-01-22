@@ -92,7 +92,7 @@ export const ItemDetail = ({ producto }) => {
                             }
                         </Col>
                         <Col md={12} lg={6} className='my-3'>
-                            <AddToCart disabled={(!showAddToCart)}/>
+                            <AddToCart disabled={(!showAddToCart)} game={producto}/>
                         </Col>
                     </Row>
                     </section>
