@@ -2,25 +2,27 @@ import { useState } from 'react'
 import { Button } from 'react-bootstrap'
 import {  useCartContext } from '../../context/CartContext';
 
-export const AddToCart = ({disabled=false, game}) => {
+export const AddToCart = ({disabled=false, game, format, platform}) => {
     const [texto, setTexto] = useState('Agregar al carrito');
     const [variant, setVariant] =  useState('primary');
 
     const { agregarAlCarrito } = useCartContext();
-    const cambiarTexto = () => {
-        setTimeout(() => {
-            setTexto('Producto Agregado! ✅');
-            setVariant('success')
-        }, 500);
-        setTimeout(() => {
-            setTexto('Agregar al carrito')
-            setVariant('primary')
-        }, 2000)
+    const agregar = () => {
+        const {title, price, id, image} = game;
+        const item = {
+            format,
+            id,
+            image,
+            platform,
+            price,
+            title,
+        }
+        agregarAlCarrito(item)
     }
 
     return (
         <Button variant={variant} className='mt-2' 
-        onClick={() => agregarAlCarrito(game)}
+        onClick={agregar}
         disabled={disabled}>{texto}</Button>
     )
 }

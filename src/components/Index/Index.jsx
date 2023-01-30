@@ -1,9 +1,9 @@
-import { Row, Col, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { useLoginContext } from '../../context/LoginContext';
 import { CarouselComponent } from '../CarouselComponent/CarouselComponent';
 
 export const Index = () => {
-    const { login, user } = useLoginContext();
+    const { user } = useLoginContext();
     return (
         <Container fluid>
             <CarouselComponent />

@@ -1,6 +1,7 @@
 import { collection, getDoc, getDocs, query, where } from 'firebase/firestore/lite';
 import { createContext, useContext, useState, useEffect } from 'react';
 import { db } from '../firebase/config';
+import { CartContext } from './CartContext';
 
 export const LoginContext = createContext();
 
@@ -19,6 +20,7 @@ export const LoginProvider = ({children}) => {
 
     const [user, setUser] = useState(userLog);
     const [loading, setLoading] = useState(false);
+    const {vaciarElCarrito} = useContext(CartContext);
     const login = (values) => {
         const userReference = collection(db, 'users');
         const q = query(userReference, where('email', '==', values.email));
@@ -48,6 +50,7 @@ export const LoginProvider = ({children}) => {
     }
 
     const logout = () => {
+        vaciarElCarrito();
         setUser({
             email: null,
             name: null,
@@ -62,9 +65,7 @@ export const LoginProvider = ({children}) => {
 
     return (
         <LoginContext.Provider value={{user, login, logout, loading}}>
-            {
-                children
-            }
+            {children}
         </LoginContext.Provider>
     )
 }

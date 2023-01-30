@@ -10,7 +10,25 @@ $theme-colors: (
     "light": #fff6ee,
     "dark": #2e2d2c
 );
+.icono-carrito{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 50px;
+    margin-right: 0.5em;
+    fill: #f28500;
+}
+.pointer{
+    cursor: pointer;
+}
 
+.zen-font{
+    font-family: 'Zen Dots', cursive;
+}
+
+.fit-image{
+    object-fit: cover;
+    object-position: center;
+}
 @import "node_modules/bootstrap/scss/bootstrap.scss";
-@import "/src/components/CartWidget/CartWidget.scss";
-@import "/src/components/Item/Item.scss";
+
