@@ -45,7 +45,10 @@ export const ItemDetail = ({ producto }) => {
         <Row className="mx-2">
             <Col md={12} lg={6}>
             <div className="m-lg-3">
-                <Image thumbnail src={image} />
+<img thumbnail src={image} height={500} width={700} style={{objectFit: 'contain', objectPosition: 'center', maxHeight: '30em'}} />
+
+
+
             </div>
             </Col>
             <Col md={12} lg={6}>
