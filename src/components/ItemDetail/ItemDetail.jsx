@@ -1,4 +1,4 @@
-import { Row, Col, Image, Badge, Container, Card, Button } from "react-bootstrap";
+import { Row, Col, Image, Badge, Container, Card, Button, Alert } from "react-bootstrap";
 import parse from 'html-react-parser';
 import { useState } from "react";
 import { ShippingCalculator } from "../ShippingCalculator/ShippingCalculator";
@@ -11,7 +11,6 @@ export const ItemDetail = ({ producto }) => {
     const [showFormat, setShowFormat] = useState(false);
     const [activeFormat, setActiveFormat] = useState();
     const [showAddToCart, setShowAddToCart] = useState(false);
-
     const navigate = useNavigate();
     
     const mostrarBotonesFormato = (platformName) =>{
@@ -37,7 +36,6 @@ export const ItemDetail = ({ producto }) => {
         <Row className="my-3 mx-4">
         <Col md={1} lg={1}>
             <h4>
-
             <Button variant="outline-primary" onClick={volverAtras}> Atrás </Button>
             </h4>
         </Col>
@@ -45,10 +43,7 @@ export const ItemDetail = ({ producto }) => {
         <Row className="mx-2">
             <Col md={12} lg={6}>
             <div className="m-lg-3">
-<img thumbnail src={image} height={500} width={700} style={{objectFit: 'contain', objectPosition: 'center', maxHeight: '30em'}} />
-
-
-
+                <img src={image} height={500} width={700} className="fit-image-detail" />
             </div>
             </Col>
             <Col md={12} lg={6}>

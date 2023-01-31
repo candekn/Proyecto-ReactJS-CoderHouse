@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore/lite";
 import { db } from "../../firebase/config";
 
-export const ItemListContainer = () => {
+export const ItemListContainer = ({showTitle=true}) => {
     const [games, setGames] = useState([]);
     const [plataformaNombre, setPlataformaNombre] = useState("");
     const {plataforma} = useParams(); 
@@ -49,10 +49,10 @@ export const ItemListContainer = () => {
 
     return (
         <>
-            <h2 className="text-primary mx-5 my-3">{plataformaNombre.replace('-', ' ').toUpperCase()}</h2>
+            { showTitle && <h2 className="text-primary mx-5 my-3">{plataformaNombre.replace('-', ' ').toUpperCase()}</h2>}
             {
                 !loading 
-                ? <ItemList productos={games} />
+                ? showTitle ? <ItemList productos={games} /> : <ItemList productos={games.slice(5)} />
                 : <Spinner animation="border" variant="warning" className="m-5" />
             }
         </>
