@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react"
 import { Container, Row, Col, Image, Badge, Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext"
+import { Checkout } from "../Checkout/Checkout";
 import { ItemCount } from "../ItemCount/ItemCount";
 
 export const Cart = () => {
@@ -59,7 +60,7 @@ export const Cart = () => {
                 </Table>
                 <div className="d-flex justify-content-around">
                     <Button variant="info" onClick={handleVaciarElCarrito}>Vaciar el Carrito</Button>
-                    <Button variant="primary" onClick={handleCheckout}>Comprar</Button>
+                    <Checkout />
                 </div>
                 </>
 

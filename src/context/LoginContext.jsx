@@ -10,6 +10,7 @@ export const useLoginContext = () => {
 }
 
 const userLog = JSON.parse(localStorage.getItem('user')) || {
+    id: null,
     email: null,
     name: null,
     logged: false,
@@ -30,6 +31,7 @@ export const LoginProvider = ({children}) => {
                 if(res.docs.length > 0){
                     const data = res.docs[0].data()
                     setUser({
+                        id: res.docs[0].id,
                         email: data.email,
                         name: data.name,
                         logged: true,
@@ -37,6 +39,7 @@ export const LoginProvider = ({children}) => {
                     })
                 }else{
                     setUser({
+                        id: null,
                         email: null,
                         name: null,
                         logged: false,
@@ -52,6 +55,7 @@ export const LoginProvider = ({children}) => {
     const logout = () => {
         vaciarElCarrito();
         setUser({
+            id: null,
             email: null,
             name: null,
             logged: false,
