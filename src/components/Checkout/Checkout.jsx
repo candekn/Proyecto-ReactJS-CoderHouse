@@ -1,7 +1,7 @@
 import { doc, getDoc } from "firebase/firestore/lite";
 import { Formik } from "formik";
 import { useContext, useEffect, useState } from "react";
-import { Button, Form, Modal } from "react-bootstrap"
+import { Button, Container, Form, Modal } from "react-bootstrap"
 import { LoginContext } from "../../context/LoginContext";
 import { db } from "../../firebase/config";
 import * as Yup from 'yup';
@@ -10,7 +10,7 @@ const schema = Yup.object().shape({
     name: Yup.string().min(4, 'Mínimo 4 caracteres').max(30, 'Máximo 30 caracteres').required('Campo requerido!'),
     address: Yup.string().min(8, 'Mínimo 8 caracteres').max(40, 'Máximo 40 caracteres').required('Campo requerido!'),
     email: Yup.string().email('El email no es válido').required('Campo requerido!'),
-    lastname: Yup.string().min(4, 'Mínimo 4 caracteres').max(30, 'Máximo 30 caracteres').required('Campo requerido!'),
+    lastname: Yup.string().min(3, 'Mínimo 3 caracteres').max(30, 'Máximo 30 caracteres').required('Campo requerido!'),
     zipcode: Yup.number().min(4, 'Numero postal inválido').max(4, 'Numero postal inválido').required('Campo requerido!'),
     cardnumber: Yup.string().matches('/^4[0-9]\d+$/', 'Número de tarjeta inválido'),
     code: Yup.number().min(3, 'Mínimo 3 números').max(4, 'Máximo 4 números').required('Campo requerido!'),
@@ -19,7 +19,6 @@ const schema = Yup.object().shape({
 })
 
 export const Checkout = () => {
-    const [show, setShow] = useState(false);
     const [userData, setUserData] = useState();
     const { user } = useContext(LoginContext)
     const handleClose = () => setShow(false);
@@ -49,12 +48,9 @@ export const Checkout = () => {
     }
     return (
         <>
-            <Button variant="primary" onClick={() => setShow(true)}>Comprar</Button>
-            <Modal show={show} onHide={handleClose} animation>
-                <Modal.Header closeButton>
-                    <Modal.Title>CheckOut</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
+            <Container fluid>
+                    <h3>CheckOut</h3>
+                <div>
                     <Formik initialValues={userData} validationSchema={schema} onSubmit={(v) => createorder(v)}>
                         {({
                             values, handleChange, handleSubmit, errors
@@ -74,16 +70,16 @@ export const Checkout = () => {
                             </Form>
                         )} 
                     </Formik>
-                </Modal.Body>
-                <Modal.Footer>
+                </div>
+                <div>
                     <Button variant="secondary" onClick={handleClose}>
                         Cancelar
                     </Button>
                     <Button variant="primary" onClick={handleClose}>
                         Comprar
                     </Button>
-                </Modal.Footer>
-            </Modal>
+                </div>
+            </Container>
         </>
     )
 }

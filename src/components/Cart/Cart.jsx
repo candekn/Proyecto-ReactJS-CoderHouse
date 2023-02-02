@@ -1,14 +1,16 @@
 import { useContext, useEffect } from "react"
 import { Container, Row, Col, Image, Badge, Table, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext"
 import { Checkout } from "../Checkout/Checkout";
 import { ItemCount } from "../ItemCount/ItemCount";
 
 export const Cart = () => {
     const {cantidadTotal, cart, precioTotal, vaciarElCarrito} = useContext(CartContext);
+    const navigate = useNavigate();
     const handleCheckout = () => {
-        alert("Compra realizada!")
+        alert("Compra realizada!");
+        navigate('/checkout')
     }
     const handleVaciarElCarrito = () => {
         vaciarElCarrito();
@@ -25,11 +27,13 @@ export const Cart = () => {
                 <>
                 <Table responsive>
                     <thead className="text-center fs-4 text-primary">
-                        <th></th>
-                        <th>Juego</th> 
-                        <th>Cantidad</th> 
-                        <th>Precio</th> 
-                        <th>Total</th>
+                        <tr>
+                            <th></th>
+                            <th>Juego</th> 
+                            <th>Cantidad</th> 
+                            <th>Precio</th> 
+                            <th>Total</th>
+                        </tr>
                     </thead>
                     <tbody className="text-center">
                         {cart.map((c, i) => 
@@ -60,7 +64,7 @@ export const Cart = () => {
                 </Table>
                 <div className="d-flex justify-content-around">
                     <Button variant="info" onClick={handleVaciarElCarrito}>Vaciar el Carrito</Button>
-                    <Checkout />
+                    <Button variant="primary" onClick={handleCheckout}>Comprar</Button>
                 </div>
                 </>
 

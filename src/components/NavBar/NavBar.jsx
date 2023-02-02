@@ -12,9 +12,11 @@ export const NavBar = () => {
         logout();
         navigate('/');
     }
-    
+
+
+
     return (
-        <Navbar bg="dark" expand="lg" variant="dark" >
+        <Navbar bg="dark" expand="lg" variant="dark"  >
             <Navbar.Toggle aria-controls="navbar-nav" className="me-0 mx-2" />
             <Navbar.Brand>
                 <Link to="/">

@@ -29,15 +29,15 @@ export const CartProvider = ({children}) => {
     
     const quitarCantidadDelCarrito = (item) => {
         setCart(cart.map(c => {
-            if(c.id == item.id){
+            if(c.id == item.id && c.platform == item.platform && c.format == item.format){
                 c.cantidad--
             }
             return c
         }))
     }
 
-    const eliminarDelCarrito = ({id}) => {
-        setCart(cart.filter(item => item.id != id));
+    const eliminarDelCarrito = ({id, platform, format}) => {
+        setCart(cart.filter(item => item.id === id && item.platform == platform && item.format == format));
     }
 
     const verificarItem = ({id, platform, format}) => {
