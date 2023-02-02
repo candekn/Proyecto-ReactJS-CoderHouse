@@ -1,4 +1,5 @@
 import { BrowserRouter } from "react-router-dom"
+import { Footer } from "../components/Footer/Footer"
 import { NavBar } from "../components/Navbar/Navbar"
 import { useLoginContext } from "../context/LoginContext"
 import PrivateRoutes from "./PrivateRouter"
@@ -14,6 +15,7 @@ export const AppRouter = () => {
                 ? <PrivateRoutes />
                 : <PublicRoutes />
             }
+            <Footer />
         </BrowserRouter>
     )
 }

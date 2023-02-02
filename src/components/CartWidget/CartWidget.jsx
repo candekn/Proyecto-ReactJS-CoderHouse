@@ -13,13 +13,12 @@ export const CartWidget = () => {
         setLinkTo(user.logged ? '/carrito' :'/login');
     }, [user, linkTo])
     return (
-        <div className="icono-carrito">
-            
-                <Link to={linkTo}>      
+        <div className="icono-carrito">          
+                <Link to={linkTo} style={{textDecoration:'none'}}>      
                     <IconContext.Provider value={{size:"2.25em", color:"#f28500"}} >
                         <AiOutlineShoppingCart />
                     </IconContext.Provider>
-                    <span className="text-light fs-5">{cantidadTotal}</span>
+                    <span className="text-light fs-5">{cantidadTotal()}</span>
                 </Link>
         </div>
     )

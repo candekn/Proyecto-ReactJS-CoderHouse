@@ -8,11 +8,11 @@ import { AppRouter } from './router/AppRouter';
 function App() {
   return (
     <main>
-      <LoginProvider>
         <CartProvider>
+      <LoginProvider>
           <AppRouter />
-        </CartProvider>
       </LoginProvider>
+        </CartProvider>
     </main>
   )
 }

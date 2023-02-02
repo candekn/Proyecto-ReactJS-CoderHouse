@@ -1,4 +1,4 @@
-import { Row, Col, Image, Badge, Container, Card, Button } from "react-bootstrap";
+import { Row, Col, Image, Badge, Container, Card, Button, Alert } from "react-bootstrap";
 import parse from 'html-react-parser';
 import { useState } from "react";
 import { ShippingCalculator } from "../ShippingCalculator/ShippingCalculator";
@@ -7,19 +7,18 @@ import { useNavigate } from "react-router-dom";
 
 export const ItemDetail = ({ producto }) => {
     const { id, title, year, format, price, genre, platform, description, stock, image } = producto;
-    const [activePlatform, setActivePlatform] = useState('a');
+    const [activePlatform, setActivePlatform] = useState();
     const [showFormat, setShowFormat] = useState(false);
-    const [activeFormat, setActiveFormat] = useState('a');
+    const [activeFormat, setActiveFormat] = useState();
     const [showAddToCart, setShowAddToCart] = useState(false);
-
     const navigate = useNavigate();
     
-    const mostrarBotonesFormato = (idPlatform) =>{
+    const mostrarBotonesFormato = (platformName) =>{
         setShowFormat(!showFormat);
-        if(activePlatform == 'a'){
+        if(activePlatform == null){
             setShowFormat(true);
         }
-        setActivePlatform(idPlatform);
+        setActivePlatform(platformName);
     }
 
     const mostrarAgregarCarrito = (format) =>{
@@ -37,7 +36,6 @@ export const ItemDetail = ({ producto }) => {
         <Row className="my-3 mx-4">
         <Col md={1} lg={1}>
             <h4>
-
             <Button variant="outline-primary" onClick={volverAtras}> Atrás </Button>
             </h4>
         </Col>
@@ -45,7 +43,7 @@ export const ItemDetail = ({ producto }) => {
         <Row className="mx-2">
             <Col md={12} lg={6}>
             <div className="m-lg-3">
-                <Image thumbnail src={image} />
+                <img src={image} height={500} width={700} className="fit-image-detail" />
             </div>
             </Col>
             <Col md={12} lg={6}>
@@ -68,8 +66,8 @@ export const ItemDetail = ({ producto }) => {
                                     platform.map(
                                         (plat, i) => 
                                     <Button key={i.toString()} size="sm" className="my-3" variant="outline-primary" 
-                                    active={ (activePlatform == i && showFormat) }
-                                    onClick={() => mostrarBotonesFormato(i)}>
+                                    active={ (activePlatform == plat && showFormat) }
+                                    onClick={() => mostrarBotonesFormato(plat)}>
                                         {plat.toUpperCase().replace('-', ' ')}
                                     </Button>)
                                     
@@ -92,7 +90,7 @@ export const ItemDetail = ({ producto }) => {
                             }
                         </Col>
                         <Col md={12} lg={6} className='my-3'>
-                            <AddToCart disabled={(!showAddToCart)}/>
+                            <AddToCart disabled={(!showAddToCart)} game={producto} format={activeFormat} platform={activePlatform} />
                         </Col>
                     </Row>
                     </section>

@@ -1,14 +1,22 @@
 import { Button, Dropdown, Nav, Navbar, NavDropdown, NavLink } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logoColor from "../../assets/img/logo-color.png";
 import { useLoginContext } from "../../context/LoginContext";
 import { CartWidget } from "../CartWidget/CartWidget";
 
 export const NavBar = () => {
     const { logout, user } = useLoginContext()
+    const navigate = useNavigate();
+
+    const handleLogOut = () => {
+        logout();
+        navigate('/');
+    }
+
+
 
     return (
-        <Navbar bg="dark" expand="lg" variant="dark" >
+        <Navbar bg="dark" expand="lg" variant="dark"  >
             <Navbar.Toggle aria-controls="navbar-nav" className="me-0 mx-2" />
             <Navbar.Brand>
                 <Link to="/">
@@ -28,7 +36,7 @@ export const NavBar = () => {
                 <Nav className="mx-auto mx-lg-0 ms-lg-auto px-2">
                     {user.logged 
                     && <NavDropdown title={(`Hola, ${user.name}!`.toUpperCase())}>
-                        <Button  className="dropdown-item" onClick={logout}>Salir</Button>
+                        <Button  className="dropdown-item" onClick={handleLogOut}>Salir</Button>
                     </NavDropdown>
                     }
                     <Link  className="nav-link" to="/">INICIO</Link>
