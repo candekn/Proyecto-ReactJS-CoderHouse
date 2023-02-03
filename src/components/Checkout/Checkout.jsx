@@ -61,25 +61,31 @@ export const Checkout = () => {
             order: cart,
             total: precioTotal()
         }
+        const sinStock = [];
+        let cartFiltrado = [];
 
         const batch = writeBatch(db);
         const ordersRef = collection(db, 'orders');
         const gamesRef = collection(db, 'games');
-        const sinStock = [];
-        const queryGamesRef = query(gamesRef, where( documentId(), 'in', [... new Set(cart)].map(c => c.id) ) );
-        
-        const games = await getDocs(queryGamesRef);
 
-        games.docs.forEach(game => {
-            const cartItem = cart.find(c => c.id === game.id)
-            if (game.data().stock >= cartItem.cantidad) {
-                batch.update(game.ref, {
-                    stock: (game.data().stock - cartItem.cantidad)
-                })
-            } else {
-                sinStock.push(cartItem)
-            }
-        })
+        //Filtro por formato fisico, para no quitar stock a juegos en formato digital
+        cartFiltrado = [... new Set(cart.filter(c => c.format == 'Fisico'))];
+
+        if(cartFiltrado.length > 0){
+            const queryGamesRef = query(gamesRef, where( documentId(), 'in', cartFiltrado.map(c => c.id) ) );       
+            const games = await getDocs(queryGamesRef);  
+            games.docs.forEach(game => {
+                const cartItem = cartFiltrado.find(c => c.id === game.id)
+                if (game.data().stock >= cartItem.cantidad) {
+                    batch.update(game.ref, {
+                        stock: (game.data().stock - cartItem.cantidad)
+                    })
+                } else {
+                    sinStock.push(cartItem)
+                }
+            })         
+        }
+
         if (sinStock.length === 0) {
             batch.commit()
                 .then(() => {
@@ -94,7 +100,7 @@ export const Checkout = () => {
         } else {
             alert("Hay items sin stock")
         }
-    }
+        }
 
 
     const handleClose = () => {
@@ -104,9 +110,9 @@ export const Checkout = () => {
     if (ordenID) {
         return (
             <Container className="d-flex flex-column justify-content-center my-5 text-center">
-                <h2>¡Compra realizada con éxito!</h2>
+                <h2 className="my-3 text-primary">¡Compra realizada con éxito!</h2>
                 <h4>Tu código de orden es: <strong>{ordenID}</strong> <CopyText text={ordenID} /></h4>
-                <div className="d-flex justify-content-center">
+                <div className="d-flex justify-content-center my-2">
                     <Image src={dancing} width={200} />
                 </div>         
                 <Link to="/" className="text-decoration-none fs-5 text-primary"> Volver al Inicio </Link>
