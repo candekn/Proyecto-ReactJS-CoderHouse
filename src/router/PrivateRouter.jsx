@@ -21,7 +21,8 @@ const PrivateRoutes = () => {
             <Route path='/checkout' element={ <Checkout /> } />
             <Route path="/login" element={ <Navigate to="/" /> }/>
             <Route path="/mis-compras" element={ <MyPurchases/> }/>
-            <Route path='*' element={ <NotFound />} />
+            <Route path='/404' element={ <NotFound />} />
+            <Route path='*' element={ <Navigate to="/404"/> } />
         </Routes>  
     )
 }
