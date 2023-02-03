@@ -3,6 +3,7 @@ import { useState } from "react"
 import { Button, Container, Form, Spinner } from "react-bootstrap"
 import { useLoginContext } from "../../context/LoginContext"
 import * as Yup from 'yup';
+import { Link } from "react-router-dom";
 
 const schema = Yup.object().shape({
     email: Yup.string().email('El email no es válido').required('Campo requerido!'),
@@ -55,6 +56,9 @@ export const Login = () => {
                 </Form>
                 )}
                 </Formik>
+                <div className="d-flex justify-content-center">
+                    <Link to="/registro" className="text-decoration-none text-primary fs-3">Registrarme</Link>
+                </div>
             </div>
         </Container>
     )

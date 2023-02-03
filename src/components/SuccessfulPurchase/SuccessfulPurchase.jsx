@@ -1,7 +1,9 @@
 import { useState } from "react"
-import { Container } from "react-bootstrap"
+import { Button, Container, Image } from "react-bootstrap"
 import CopyToClipboard from "react-copy-to-clipboard";
+import { Link } from "react-router-dom";
 import dancing from "../../assets/img/dancing.gif";
+import { ImCopy } from "react-icons/im";
 
 export const SuccessfulPurchase = ({ordenID}) => {
     const [copied, setCopied] = useState(false);
@@ -9,7 +11,7 @@ export const SuccessfulPurchase = ({ordenID}) => {
     return (
         <Container className="d-flex flex-column justify-content-center my-5 text-center">
         <h2 className="my-3 text-primary">¡Orden generada con éxito!</h2>
-        <h4>Tu código de orden es: <strong>{ordenID}</strong> 
+        <h4>Tu código de orden es: <strong className="me-2">{ordenID}</strong> 
             {               
                 !copied 
                 ?

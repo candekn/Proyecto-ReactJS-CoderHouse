@@ -1,9 +1,10 @@
 import { collection, getDocs, query, where } from "firebase/firestore/lite";
 import { useContext, useEffect, useState } from "react"
-import { Accordion, Container, Table, Image } from "react-bootstrap";
+import { Accordion, Container, Table, Image, Button, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { LoginContext } from "../../context/LoginContext"
+import { LoginContext } from "../../context/LoginContext";
 import { db } from "../../firebase/config";
+
 
 export const MyPurchases = () => {
     const { user } = useContext(LoginContext);
@@ -30,20 +31,24 @@ export const MyPurchases = () => {
         <Container fluid>
         <h4 className='m-3 text-primary'>Mis Compras</h4>
             {
+                loading 
+                ? <Spinner variant="primary" className="justify-align-center" />
+                :
                 ordenes.length === 0
-                    ? <div className="d-flex justify-content-center d-column">
+                    ? <div className="d-flex justify-content-center flex-column">
                         <h3 className="text-center">Aún no realizaste ninguna compra 🥺</h3>
-                        <Link className="text-decoration-none fs-3 text-primary" to="/juegos">¡Compremos!</Link>
+                        <Link className="text-decoration-none text-center fs-3 text-primary" to="/juegos">¡Compremos!</Link>
                     </div>
                     : <Accordion className="m-5">
                         {ordenes.map((o, i) =>
                             <Accordion.Item key={i.toString()} eventKey={i.toString()}>
-                                <Accordion.Header className="text-primary">Orden <strong>#{o.id}</strong></Accordion.Header>
+                                <Accordion.Header className="text-primary">Orden <strong className="ms-2">#{o.id}</strong></Accordion.Header>
                                 <Accordion.Body>
                                     <Table responsive>
                                         <thead className="text-center fs-4 text-primary">
                                             <tr>
-                                                <th><span className="text-success">{o.status}</span> {o.date}</th>
+                                                <th className="text-success"><span className="me-2">{o.status}</span>{o.date.split(',')[0]}</th>
+                                                
                                                 <th>Juego</th>
                                                 <th>Plataforma</th>
                                                 <th>Formato</th>
@@ -61,7 +66,6 @@ export const MyPurchases = () => {
                                                             <span>
                                                                 {g.title}
                                                             </span>
-                                                            <br />
                                                         </td>
                                                         <td>{g.platform.toUpperCase()}</td>
                                                         <td>{g.format}</td>
@@ -76,7 +80,7 @@ export const MyPurchases = () => {
                                                 <td></td>
                                                 <td></td>
                                                 <td className="text-center fs-5 text-primary fw-bold">Total:</td>
-                                                <td className="text-center fs-5 text-primary fw-bold">${o.total}</td>
+                                                <td className="text-center fs-5 fw-bold">${o.total}</td>
                                             </tr>
                                         </tbody>
                                     </Table>
