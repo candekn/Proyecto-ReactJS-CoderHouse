@@ -19,7 +19,7 @@ export const CartProvider = ({children}) => {
             setCart([...cart, item]);
         }else{
             setCart(cart.map(c => {
-                if(c.id == item.id){
+                if(c.id == item.id && c.platform == item.platform && c.format == item.format){
                     c.cantidad++
                 }
                 return c
