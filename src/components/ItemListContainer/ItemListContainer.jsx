@@ -51,9 +51,9 @@ export const ItemListContainer = ({showTitle=true}) => {
         <>
             { showTitle && <h2 className="text-primary mx-5 my-3">{plataformaNombre.replace('-', ' ').toUpperCase()}</h2>}
             {
-                !loading 
-                ? showTitle ? <ItemList productos={games} /> : <ItemList productos={games.slice(5)} />
-                : <Spinner animation="border" variant="warning" className="m-5" />
+                loading 
+                ? <Spinner animation="border" variant="warning" className="m-5" />
+                : showTitle ? <ItemList productos={games} /> : <ItemList productos={games.slice(5)} />
             }
         </>
     )

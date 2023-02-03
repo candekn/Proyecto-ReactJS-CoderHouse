@@ -2,14 +2,12 @@ import { useContext, useEffect } from "react"
 import { Container, Row, Col, Image, Badge, Table, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext"
-import { Checkout } from "../Checkout/Checkout";
 import { ItemCount } from "../ItemCount/ItemCount";
 
 export const Cart = () => {
     const {cantidadTotal, cart, precioTotal, vaciarElCarrito} = useContext(CartContext);
     const navigate = useNavigate();
     const handleCheckout = () => {
-        alert("Compra realizada!");
         navigate('/checkout')
     }
     const handleVaciarElCarrito = () => {
