@@ -6,10 +6,8 @@ import { LoginContext } from "../../context/LoginContext";
 import { db } from "../../firebase/config";
 import * as Yup from 'yup';
 import { CartContext } from "../../context/CartContext";
-import { Link, useNavigate } from "react-router-dom";
-import dancing from "../../assets/img/dancing.gif";
+import { useNavigate } from "react-router-dom";
 
-import { CopyText } from "../CopyText/CopyText";
 import { SuccessfulPurchase } from "../SuccessfulPurchase/SuccessfulPurchase";
 
 const schema = Yup.object().shape({
@@ -55,6 +53,7 @@ export const Checkout = () => {
         setLoading(true)
         const orden = {
             user: {
+                id: user.id,
                 email: user.email,
                 address: values.address,
                 zipcode: values.zipcode

@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { Container } from "react-bootstrap"
+import CopyToClipboard from "react-copy-to-clipboard";
+import dancing from "../../assets/img/dancing.gif";
 
 export const SuccessfulPurchase = ({ordenID}) => {
     const [copied, setCopied] = useState(false);
