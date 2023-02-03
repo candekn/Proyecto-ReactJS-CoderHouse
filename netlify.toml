@@ -4,6 +4,6 @@
   base = ""
 
 [[redirects]]
-from="*"
-to="/404"
-status=200
+  from="/*"
+  to="/404/404.html"
+  status=200
