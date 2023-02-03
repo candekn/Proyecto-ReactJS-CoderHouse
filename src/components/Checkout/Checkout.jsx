@@ -10,6 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 import dancing from "../../assets/img/dancing.gif";
 
 import { CopyText } from "../CopyText/CopyText";
+import { SuccessfulPurchase } from "../SuccessfulPurchase/SuccessfulPurchase";
 
 const schema = Yup.object().shape({
     name: Yup.string().min(4, 'Mínimo 4 caracteres').max(30, 'Máximo 30 caracteres').required('Campo requerido!'),
@@ -59,6 +60,8 @@ export const Checkout = () => {
                 zipcode: values.zipcode
             },
             order: cart,
+            date: new Date(Date.now()),
+            status: 'Generada',
             total: precioTotal()
         }
         const sinStock = [];
@@ -97,10 +100,11 @@ export const Checkout = () => {
                         })
                         .catch((error) => console.log(error))
                 })
-        } else {
+        } 
+        else {
             alert("Hay items sin stock")
         }
-        }
+    }
 
 
     const handleClose = () => {
@@ -109,14 +113,7 @@ export const Checkout = () => {
 
     if (ordenID) {
         return (
-            <Container className="d-flex flex-column justify-content-center my-5 text-center">
-                <h2 className="my-3 text-primary">¡Compra realizada con éxito!</h2>
-                <h4>Tu código de orden es: <strong>{ordenID}</strong> <CopyText text={ordenID} /></h4>
-                <div className="d-flex justify-content-center my-2">
-                    <Image src={dancing} width={200} />
-                </div>         
-                <Link to="/" className="text-decoration-none fs-5 text-primary"> Volver al Inicio </Link>
-            </Container>
+            <SuccessfulPurchase ordenID={ordenID} />
         )
     }
 
