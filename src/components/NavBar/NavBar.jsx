@@ -36,8 +36,9 @@ export const NavBar = () => {
                 <Nav className="mx-auto mx-lg-0 ms-lg-auto px-2">
                     {user.logged 
                     && <NavDropdown title={(`Hola, ${user.name}!`.toUpperCase())}>
-                        <Button  className="dropdown-item" onClick={handleLogOut}>Salir</Button>
-                    </NavDropdown>
+                            <Link className="dropdown-item" to="/mis-compras">Mis Compras</Link>
+                            <Button  className="dropdown-item" onClick={handleLogOut}>Salir</Button>
+                        </NavDropdown>
                     }
                     <Link  className="nav-link" to="/">INICIO</Link>
                     <NavDropdown title="JUEGOS" menuVariant="dark">

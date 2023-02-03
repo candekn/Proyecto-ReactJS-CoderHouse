@@ -12,7 +12,7 @@ export const ItemCount = ({itemCantidad, item}) => {
     const [stock, setStock] = useState(1);
 
     const sumarCantidad = () => {
-        if (cantidad < stock) {
+        if ((cantidad < stock && item.format == 'Fisico') || item.format == 'Digital') {
             setCantidad(cantidad + 1)
             agregarAlCarrito(item)
         }
@@ -48,7 +48,10 @@ export const ItemCount = ({itemCantidad, item}) => {
                     <Button variant="secondary" onClick={sumarCantidad}> + </Button>
                 </ButtonGroup>
             </div>
+            {
+                item.format == 'Fisico' &&
                 <span className="text-muted fst-italic">{stock} disponibles</span>
+            }
         </div>
     )
 }

@@ -24,7 +24,7 @@ export const LoginProvider = ({children}) => {
     const {vaciarElCarrito} = useContext(CartContext);
     const login = (values) => {
         const userReference = collection(db, 'users');
-        const q = query(userReference, where('email', '==', values.email));
+        const q = query(userReference, where('email', '==', values.email), where('password', '==', values.password));
         setLoading(true);     
         getDocs(q)
         .then((res) => {

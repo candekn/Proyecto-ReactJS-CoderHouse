@@ -37,7 +37,7 @@ export const CartProvider = ({children}) => {
     }
 
     const eliminarDelCarrito = ({id, platform, format}) => {
-        setCart(cart.filter(item => item.id === id && item.platform == platform && item.format == format));
+        setCart(cart.filter(item => !(item.id === id && item.platform == platform && item.format == format)));
     }
 
     const verificarItem = ({id, platform, format}) => {
